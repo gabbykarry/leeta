@@ -20,7 +20,7 @@ export default function RootLayout() {
 
   const router = useRouter();
   useEffect(() => {
-    if (loaded) router.replace("/screens");
+    if (loaded) router.replace("/screens/Home");
   }, []);
 
   if (!loaded) {
