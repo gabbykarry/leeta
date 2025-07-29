@@ -8,7 +8,7 @@ In addition to the web implementation, I also created a mobile version of the pr
 
 ## Mobile Version
 
-**Download APK**: [https://expo.dev/accounts/gabbykarry/projects/chippa-fun/builds/d12b46be-1c26-4919-8e5f-0f3a17a42542](#)
+**Download APK**: [https://expo.dev/accounts/gabbykarry/projects/chippa-fun/builds/f3b84561-da89-4ce5-ab71-bdc30a27980b](#)
 
 The mobile version is built using React Native (with Expo) and mirrors the core product listing and interaction experience from the web. It is organized in its own branch (`mobile`).
 
