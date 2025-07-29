@@ -1,10 +1,11 @@
-import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet } from "react-native";
-import "react-native-reanimated";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 import ChipsToast from "@/components/GlobalToast";
+import { useFonts } from "expo-font";
+import { Stack, useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { useEffect } from "react";
+import { StyleSheet } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import "react-native-reanimated";
 
 export default function RootLayout() {
   const [loaded] = useFonts({
@@ -17,10 +18,15 @@ export default function RootLayout() {
     SemiBold: require("../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
   });
 
+  const router = useRouter();
+
   if (!loaded) {
     return null;
   }
 
+  useEffect(() => {
+    if (loaded) router.replace("/screens");
+  }, []);
   return (
     <GestureHandlerRootView style={styles.container}>
       <Stack>
