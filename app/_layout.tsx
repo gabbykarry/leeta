@@ -20,8 +20,10 @@ export default function RootLayout() {
 
   const router = useRouter();
   useEffect(() => {
-    if (loaded) router.replace("/screens/Home");
-  }, []);
+    if (loaded) {
+      router.replace("/screens/Home");
+    }
+  }, [loaded]);
 
   if (!loaded) {
     return null;
@@ -29,9 +31,12 @@ export default function RootLayout() {
 
   return (
     <GestureHandlerRootView style={styles.container}>
-      <Stack>
-        <Stack.Screen name="screens" options={{ headerShown: false }} />
-      </Stack>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          animation: "fade",
+        }}
+      />
       <ChipsToast />
       <StatusBar style="dark" />
     </GestureHandlerRootView>
