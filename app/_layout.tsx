@@ -19,14 +19,14 @@ export default function RootLayout() {
   });
 
   const router = useRouter();
+  useEffect(() => {
+    if (loaded) router.replace("/screens");
+  }, []);
 
   if (!loaded) {
     return null;
   }
 
-  useEffect(() => {
-    if (loaded) router.replace("/screens");
-  }, []);
   return (
     <GestureHandlerRootView style={styles.container}>
       <Stack>
